@@ -206,7 +206,8 @@ body {
 }
 
 .highlight-section {
-  background: url("https://htmldemo.net/bstore/bstore/assets/images/bg/1.webp") center/cover no-repeat;
+  background: url("https://htmldemo.net/bstore/bstore/assets/images/bg/1.webp")
+    center/cover no-repeat;
   padding: 70px 0;
   margin: 60px 0;
   position: relative;
