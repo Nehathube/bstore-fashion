@@ -41,15 +41,6 @@
   }
 }
 
-/* Container for centered content */
-.new-sale-container {
-  background-color: #fff;
-  padding: 0 0 40px 0;
-  padding-left: 180px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 /* Product Sections */
 .new-products-section,
 .sale-products-section {
@@ -142,10 +133,8 @@
 }
 
 .product-image {
-  max-width: 100%;
-  height: auto;
-  width: 585px;
-  height: 447px;
+  width: 100%;
+  height: 320px;
   object-fit: cover;
   display: block;
 }
