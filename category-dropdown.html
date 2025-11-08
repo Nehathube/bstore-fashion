@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Dropdown Menu</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .header-main {
+            background-color: #ffffff;
+            padding: 20px;
+            border-bottom: 1px solid #eeeeee;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .categories-button {
+            background-color: #f8f8f8;
+            border: 1px solid #dddddd;
+            padding: 12px 15px;
+            font-size: 14px;
+            color: #666666;
+            border-right: none;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-width: 120px;
+        }
+
+        .categories-button::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 5px;
+        }
+
+        .categories-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-top: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+            min-width: 200px;
+        }
+
+        .categories-dropdown.show {
+            display: block;
+        }
+
+        .categories-dropdown ul {
+            list-style: none;
+        }
+
+        .categories-dropdown li {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333333;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .categories-dropdown li:last-child {
+            border-bottom: none;
+        }
+
+        .categories-dropdown li:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .categories-dropdown li.level-1 {
+            padding-left: 30px;
+        }
+
+        .categories-dropdown li.level-2 {
+            padding-left: 45px;
+        }
+
+        .categories-dropdown li.level-3 {
+            padding-left: 60px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+            border-left: none;
+            border-right: none;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .search-input::placeholder {
+            color: #cccccc;
+        }
+
+        .search-button {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: 1px solid #ff0000;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #cc0000;
+        }
+
+        .search-button i {
+            font-size: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .search-bar {
+                max-width: 100%;
+            }
+
+            .categories-dropdown {
+                min-width: 150px;
+            }
+
+            .categories-dropdown li.level-1 {
+                padding-left: 20px;
+            }
+
+            .categories-dropdown li.level-2 {
+                padding-left: 35px;
+            }
+
+            .categories-dropdown li.level-3 {
+                padding-left: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-main">
+        <div class="search-bar">
+            <button class="categories-button" id="categoriesBtn">
+                CATEGORIES
+            </button>
+            <div class="categories-dropdown" id="categoriesDropdown">
+                <ul>
+                    <li>Categories</li>
+                    <li class="level-1">--Women</li>
+                    <li class="level-2">----T-Shirts</li>
+                    <li class="level-1">--Men</li>
+                    <li class="level-2">----Shoes</li>
+                    <li class="level-2">----Dress</li>
+                    <li class="level-2">----Tops</li>
+                    <li class="level-2">----Casual</li>
+                    <li class="level-2">----Evening</li>
+                    <li class="level-2">----Summer</li>
+                    <li class="level-2">----Sports</li>
+                    <li class="level-2">----Day</li>
+                    <li class="level-2">----Evening</li>
+                    <li class="level-2">----Blouse</li>
+                    <li class="level-2">----Handba</li>
+                    <li class="level-2">----Phone</li>
+                    <li class="level-2">----House</li>
+                    <li class="level-2">----Beauty</li>
+                    <li class="level-2">----Health</li>
+                    <li class="level-2">----Clothing</li>
+                    <li class="level-1">--Kids</li>
+                    <li class="level-2">----Dresse</li>
+                    <li class="level-2">----Casual</li>
+                    <li class="level-2">----Day</li>
+                    <li class="level-2">----Evening</li>
+                    <li class="level-2">----Blouse</li>
+                    <li class="level-2">----Handb</li>
+                    <li class="level-2">----Phone</li>
+                    <li class="level-2">----House</li>
+                </ul>
+            </div>
+            <input type="text" class="search-input" placeholder="Enter your search key ...">
+            <button class="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for dropdown functionality
+        const categoriesBtn = document.getElementById('categoriesBtn');
+        const categoriesDropdown = document.getElementById('categoriesDropdown');
+
+        // Toggle dropdown on button click
+        categoriesBtn.addEventListener('click', function(event) {
+            event.stopPropagation();
+            categoriesDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!categoriesBtn.contains(event.target) && !categoriesDropdown.contains(event.target)) {
+                categoriesDropdown.classList.remove('show');
+            }
+        });
+
+        // Close dropdown when selecting an item
+        const dropdownItems = categoriesDropdown.querySelectorAll('li');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function() {
+                categoriesDropdown.classList.remove('show');
+                // Optional: Update button text or perform action
+                console.log('Selected:', this.textContent.trim());
+            });
+        });
+
+        // Optional: Keyboard navigation
+        categoriesBtn.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                categoriesDropdown.classList.toggle('show');
+            }
+        });
+
+        categoriesDropdown.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                categoriesDropdown.classList.remove('show');
+                categoriesBtn.focus();
+            }
+        });
+    </script>
+</body>
+</html>

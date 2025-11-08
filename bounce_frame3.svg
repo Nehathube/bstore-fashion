@@ -1,0 +1,5 @@
+<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="200" fill="#f0f0f0"/>
+  <image href="https://htmldemo.net/bstore/bstore/assets/images/slider/2.webp" width="600" height="200" opacity="0.5"/>
+  <text x="300" y="90" font-family="Bitter" font-size="48" font-weight="bold" fill="white" text-anchor="middle" opacity="1">BEST THEMES</text>
+</svg>

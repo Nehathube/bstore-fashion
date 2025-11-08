@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Elegant Dress",
+    "price": 50,
+    "category": "Women",
+    "image": "dress.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Casual Shirt",
+    "price": 30,
+    "category": "Men",
+    "image": "shirt.jpg"
+  }
+]

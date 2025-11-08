@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bstore Fashion - Nivo Caption</title>
+    <style>
+        /* Carousel Caption Overlay Container */
+        .nivo-caption {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 8;
+            width: 100%;
+            height: 100%;
+            padding: 5px 10px;
+            margin: 0;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.8);
+            color: rgb(255, 255, 255);
+            opacity: 0.8;
+            overflow: hidden;
+            display: block;
+            transition: opacity 0.3s ease; /* Smooth fade-in/out */
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            .nivo-caption {
+                height: 100%;
+                left: 0;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 767px) {
+            .nivo-caption {
+                height: 100%;
+            }
+        }
+
+        /* @media (min-width: 992px) and (max-width: 1169px): inherit base styles */
+
+        /* Print Styles */
+        @media print {
+            .nivo-caption {
+                background: transparent !important;
+                color: black !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nivo-caption">
+        <!-- Caption content -->
+        <p>This is the nivo-caption overlay with styling.</p>
+    </div>
+</body>
+</html>

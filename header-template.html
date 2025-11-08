@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bstore Fashion Header Template</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top Bar */
+        .header-top {
+            background-color: #363636;
+            color: #ADADAD;
+            font-size: 11px;
+            padding: 8px 0;
+        }
+
+        .header-top .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-top-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-top-left span {
+            cursor: pointer;
+        }
+
+        .header-top-left .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .header-top-left .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #363636;
+            min-width: 100px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .header-top-left .dropdown-content a {
+            color: #ADADAD;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .header-top-left .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .header-top-left .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .header-top-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-top-right a {
+            color: #ADADAD;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .header-top-right a:hover {
+            color: #FFFFFF;
+        }
+
+        /* Main Header */
+        .header-main {
+            background-color: #FFFFFF;
+            padding: 20px 0;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .header-main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-main-left {
+            flex: 1;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .language-selector {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-selector .selected {
+            background-color: #363636;
+            color: #FFFFFF;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .language-selector .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #363636;
+            min-width: 100px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .language-selector .dropdown-content a {
+            color: #FFFFFF;
+            padding: 8px 12px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .language-selector .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        .language-selector:hover .dropdown-content {
+            display: block;
+        }
+
+        .header-main-center {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .categories-dropdown {
+            background-color: #F8F8F8;
+            border: 1px solid #DDDDDD;
+            padding: 12px 15px;
+            font-size: 14px;
+            color: #666666;
+            border-right: none;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #DDDDDD;
+            border-left: none;
+            border-right: none;
+            font-size: 14px;
+        }
+
+        .search-input::placeholder {
+            color: #CCCCCC;
+        }
+
+        .search-button {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            border: 1px solid #FF0000;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #CC0000;
+        }
+
+        .search-button i {
+            font-size: 16px;
+        }
+
+        .header-main-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .call-box {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .call-box i {
+            font-size: 24px;
+        }
+
+        .call-text {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .phone-number {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Navigation Bar */
+        .main-navigation {
+            background-color: #363636;
+            color: #FFFFFF;
+            padding: 15px 0;
+        }
+
+        .main-navigation .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FF0000;
+        }
+
+        .cart-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        .cart-icon {
+            font-size: 20px;
+        }
+
+        .cart-badge {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+            position: relative;
+            top: -8px;
+            right: -5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top .container,
+            .header-main .container,
+            .main-navigation .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header-top-left,
+            .header-top-right {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .search-bar {
+                max-width: 100%;
+            }
+
+            .header-main .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="header-top">
+        <div class="container">
+            <div class="header-top-left">
+                <span>Welcome Bstore</span>
+                <div class="dropdown">
+                    <span>Currency: USD ▼</span>
+                    <div class="dropdown-content">
+                        <a href="#">USD</a>
+                        <a href="#">EUR</a>
+                        <a href="#">GBP</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <span>Language: English ▼</span>
+                    <div class="dropdown-content">
+                        <a href="#">English</a>
+                        <a href="#">Français</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-top-right">
+                <a href="#">Check Out</a>
+                <a href="#">Wishlist</a>
+                <a href="#">My Account</a>
+                <a href="#">My Cart</a>
+                <a href="#">Sign In</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Header -->
+    <header class="header-main">
+        <div class="container">
+            <div class="header-main-left">
+                <div class="logo">Bstore</div>
+                <div class="language-selector">
+                    <button class="selected">English ▼</button>
+                    <div class="dropdown-content">
+                        <a href="#">English</a>
+                        <a href="#">Français</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-main-center">
+                <div class="search-bar">
+                    <select class="categories-dropdown">
+                        <option>CATEGORIES</option>
+                        <option>Women</option>
+                        <option>Men</option>
+                        <option>Clothing</option>
+                        <option>Tops</option>
+                        <option>T-Shirts</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="Enter your search key ...">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-main-right">
+                <div class="call-box">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <div class="call-text">CALL US FREE</div>
+                        <div class="phone-number">0123-456-789</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="main-navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#">WOMEN</a>
+                <a href="#">MEN</a>
+                <a href="#">CLOTHING</a>
+                <a href="#">TOPS</a>
+                <a href="#">T-SHIRTS</a>
+                <a href="#">PAGE</a>
+                <a href="#">ABOUT US</a>
+            </div>
+            <div class="cart-section">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <span>MY CART</span>
+                <span class="cart-badge">2</span>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

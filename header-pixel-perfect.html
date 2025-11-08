@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bstore Fashion Header - Pixel Perfect Replica</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top Bar */
+        .header-top {
+            background-color: #F5F5F5;
+            padding: 8px 0;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .header-top .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-top-left {
+            color: #333333;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-top-left span {
+            display: inline-block;
+        }
+
+        .header-top-left .separator {
+            color: #999999;
+            margin: 0 8px;
+        }
+
+        .header-top-left .highlight {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        .header-top-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-top-right a {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .header-top-right a:hover {
+            color: #FF0000;
+        }
+
+        /* Main Header */
+        .header-main {
+            background-color: #FFFFFF;
+            padding: 20px 0;
+            border-bottom: 1px solid #EEEEEE;
+        }
+
+        .header-main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-main-left {
+            flex: 1;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000000;
+            position: relative;
+        }
+
+        .logo .b-letter {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #FF0000;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #FFFFFF;
+            margin-right: 2px;
+        }
+
+        .logo .target-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+
+        .logo .store-text {
+            color: #000000;
+        }
+
+        .header-main-center {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid #DDDDDD;
+        }
+
+        .categories-dropdown {
+            background-color: #F8F8F8;
+            border: none;
+            padding: 12px 15px;
+            font-size: 14px;
+            color: #666666;
+            border-right: 1px solid #DDDDDD;
+            cursor: pointer;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: #CCCCCC;
+        }
+
+        .search-button {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #CC0000;
+        }
+
+        .search-button i {
+            font-size: 16px;
+        }
+
+        .header-main-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .call-box {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .call-box i {
+            font-size: 24px;
+        }
+
+        .call-text {
+            font-size: 12px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .phone-number {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Navigation Bar */
+        .main-navigation {
+            background-color: #363636;
+            padding: 15px 0;
+        }
+
+        .main-navigation .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            font-family: sans-serif;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FF0000;
+        }
+
+        .cart-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .cart-icon {
+            font-size: 20px;
+        }
+
+        .cart-badge {
+            background-color: #FF0000;
+            color: #FFFFFF;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+            position: relative;
+            top: -8px;
+            right: -5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top .container,
+            .header-main .container,
+            .main-navigation .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header-top-left,
+            .header-top-right {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .search-bar {
+                max-width: 100%;
+            }
+
+            .header-main .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <header class="header-top">
+        <div class="container">
+            <div class="header-top-left">
+                <span>Welcome Bstore</span>
+                <span class="separator">|</span>
+                <span>Currency: <span class="highlight">USD</span></span>
+                <span class="separator">|</span>
+                <span>Language: <span class="highlight">English</span></span>
+            </div>
+            <div class="header-top-right">
+                <a href="#">Check Out</a>
+                <a href="#">Wishlist</a>
+                <a href="#">My Account</a>
+                <a href="#">My Cart</a>
+                <a href="#">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Header -->
+    <header class="header-main">
+        <div class="container">
+            <div class="header-main-left">
+                <div class="logo">
+                    <span class="b-letter">
+                        <i class="fas fa-crosshairs target-icon"></i>
+                    </span>
+                    <span class="store-text">.store</span>
+                </div>
+            </div>
+            <div class="header-main-center">
+                <div class="search-bar">
+                    <select class="categories-dropdown">
+                        <option>CATEGORIES ▼</option>
+                        <option>Women</option>
+                        <option>Men</option>
+                        <option>Clothing</option>
+                        <option>Tops</option>
+                        <option>T-Shirts</option>
+                    </select>
+                    <input type="text" class="search-input" placeholder="Enter your search key ...">
+                    <button class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-main-right">
+                <div class="call-box">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <div class="call-text">CALL US FREE</div>
+                        <div class="phone-number">0123-456-789</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="main-navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#">HOME</a>
+                <a href="#">WOMEN</a>
+                <a href="#">MEN</a>
+                <a href="#">CLOTHING</a>
+                <a href="#">TOPS</a>
+                <a href="#">T-SHIRTS</a>
+                <a href="#">PAGE</a>
+                <a href="#">ABOUT US</a>
+            </div>
+            <div class="cart-section">
+                <i class="fas fa-shopping-cart cart-icon"></i>
+                <span>MY CART</span>
+                <span class="cart-badge">2</span>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

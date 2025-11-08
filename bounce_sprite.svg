@@ -1,0 +1,22 @@
+<svg width="3000" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Frame 1 -->
+  <rect x="0" y="0" width="600" height="200" fill="#f0f0f0"/>
+  <image x="0" href="https://htmldemo.net/bstore/bstore/assets/images/slider/2.webp" width="600" height="200" opacity="0.5"/>
+  <text x="300" y="-2800" font-family="Bitter" font-size="48" font-weight="bold" fill="white" text-anchor="middle" opacity="0">BEST THEMES</text>
+  <!-- Frame 2 -->
+  <rect x="600" y="0" width="600" height="200" fill="#f0f0f0"/>
+  <image x="600" href="https://htmldemo.net/bstore/bstore/assets/images/slider/2.webp" width="600" height="200" opacity="0.5"/>
+  <text x="900" y="125" font-family="Bitter" font-size="48" font-weight="bold" fill="white" text-anchor="middle" opacity="1">BEST THEMES</text>
+  <!-- Frame 3 -->
+  <rect x="1200" y="0" width="600" height="200" fill="#f0f0f0"/>
+  <image x="1200" href="https://htmldemo.net/bstore/bstore/assets/images/slider/2.webp" width="600" height="200" opacity="0.5"/>
+  <text x="1500" y="90" font-family="Bitter" font-size="48" font-weight="bold" fill="white" text-anchor="middle" opacity="1">BEST THEMES</text>
+  <!-- Frame 4 -->
+  <rect x="1800" y="0" width="600" height="200" fill="#f0f0f0"/>
+  <image x="1800" href="https://htmldemo.net/bstore/bstore/assets/images/slider/2.webp" width="600" height="200" opacity="0.5"/>
+  <text x="2100" y="105" font-family="Bitter" font-size="48" font-weight="bold" fill="white" text-anchor="middle" opacity="1">BEST THEMES</text>
+  <!-- Frame 5 -->
+  <rect x="2400" y="0" width="600" height="200" fill="#f0f0f0"/>
+  <image x="2400" href="https://htmldemo.net/bstore/bstore/assets/images/slider/2.webp" width="600" height="200" opacity="0.5"/>
+  <text x="2700" y="100" font-family="Bitter" font-size="48" font-weight="bold" fill="white" text-anchor="middle" opacity="1">BEST THEMES</text>
+</svg>

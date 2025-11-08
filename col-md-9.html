@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bstore Fashion - Col MD 9</title>
+    <style>
+        /* CSS Variables */
+        :root {
+            --bs-gutter-x: 30px;
+            --bs-gutter-y: 30px;
+        }
+
+        /* Responsive Grid Column Container */
+        .col-md-9 {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            padding-right: calc(var(--bs-gutter-x) * 0.5);
+            padding-left: calc(var(--bs-gutter-x) * 0.5);
+            margin-top: var(--bs-gutter-y);
+            flex: 0 0 auto; /* For smaller screens */
+            overflow: hidden; /* Contain child elements */
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .col-md-9 {
+                width: 75%;
+                flex: 0 0 auto;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .col-md-9 {
+                background: transparent !important;
+                color: black !important;
+                box-shadow: none !important;
+                text-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="col-md-9">
+        <!-- Content for the column -->
+        <p>This is the col-md-9 container with responsive styling.</p>
+    </div>
+</body>
+</html>

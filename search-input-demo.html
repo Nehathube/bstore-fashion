@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bstore Search Input Demo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .search-container {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+        }
+
+        .categories-dropdown {
+            background-color: #f8f8f8;
+            border: 1px solid #dddddd;
+            padding: 12px 15px;
+            font-size: 14px;
+            color: #666666;
+            border-right: none;
+            cursor: pointer;
+            min-width: 120px;
+        }
+
+        .form-control.search-form {
+            /* Base styling */
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: rgb(51, 51, 51);
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(215, 215, 215);
+            border-left: 1px solid rgb(215, 215, 215);
+            border-top: none;
+            border-bottom: none;
+            border-right: none;
+            height: 45px;
+            padding: 6px 10px;
+            margin: 0px;
+            border-radius: 0px;
+            box-sizing: border-box;
+            appearance: none;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            flex: 1;
+        }
+
+        .form-control.search-form::placeholder {
+            color: rgb(108, 117, 125);
+        }
+
+        .form-control.search-form:focus {
+            border-color: rgb(134, 183, 254);
+            color: rgb(33, 37, 41);
+            background-color: rgb(255, 255, 255);
+            outline: none;
+            box-shadow: none;
+        }
+
+        .form-control.search-form:disabled {
+            background-color: rgb(233, 236, 239);
+            opacity: 1;
+        }
+
+        .search-button {
+            background-color: #ff0000;
+            color: #ffffff;
+            border: 1px solid #ff0000;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #cc0000;
+        }
+
+        .search-button i {
+            font-size: 16px;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 480px) {
+            .form-control.search-form {
+                width: 233px;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .form-control.search-form {
+                width: 150px;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .form-control.search-form {
+                width: 480px;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .form-control.search-form {
+                width: 295px;
+                padding: 6px 10px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .form-control.search-form {
+                color: black;
+                background: transparent;
+                box-shadow: none;
+                text-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <select class="categories-dropdown">
+            <option>CATEGORIES</option>
+            <option>Women</option>
+            <option>Men</option>
+        </select>
+        <input
+            type="text"
+            class="form-control search-form"
+            placeholder="Enter your search key ..."
+        />
+        <button class="search-button">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+
+    <!-- Minimal JS for demonstration (optional) -->
+    <script>
+        // Optional: Add focus/blur effects or validation if needed
+        const searchInput = document.querySelector('.form-control.search-form');
+
+        searchInput.addEventListener('focus', function() {
+            console.log('Search input focused');
+        });
+
+        searchInput.addEventListener('blur', function() {
+            console.log('Search input blurred');
+        });
+    </script>
+</body>
+</html>
