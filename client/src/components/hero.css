@@ -65,6 +65,7 @@
   flex: 0 0 auto; /* For smaller screens */
   overflow: hidden; /* Contain child elements */
   order: 1; /* Place .col-md-9 first */
+  position: relative;
 }
 
 /* Responsive */
@@ -210,6 +211,26 @@ h2.animated.bounceInDown {
   }
 }
 
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+
 @keyframes zoomInDown {
   0% {
     opacity: 0;
@@ -273,17 +294,17 @@ h2.animated.bounceInDown {
 
 /* Paragraph Text */
 .d-table-cell p {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  /* background: rgba(0, 0, 0, 0.5); */
-  color: black;
-  line-height: 1.5;
-  margin: 0 0 1rem 0;
-  padding: 20px 7px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  padding: 15px 20px;
   box-sizing: border-box;
-  display: block;
-  white-space: pre-wrap;
-  animation: bounceInDown 1s both cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: inline-block;
+  white-space: normal;
+  animation: bounceInUp 1s both cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 /* Responsive */
@@ -329,30 +350,29 @@ h2.animated.bounceInDown {
 
 /* Button */
 .btn-primary {
-  font-family: Arial, sans-serif;
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 5px;
-  color: rgb(255, 255, 255);
-  line-height: 30px;
-  display: inline !important;
-  /* padding: 11px 10px; */
-  /* margin-bottom: 100px; */
-  box-sizing: border-box;
-  border: 1px solid rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+  background: rgba(0, 0, 0, 0.45);
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 1;
+  display: inline-block;
+  padding: 12px 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1px solid #ffffff;
   text-decoration: none;
-  transition: 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
   animation: zoomInDown 1s 1s both;
   cursor: pointer;
 }
 
 .btn-primary:hover {
-  background: rgb(255, 79, 79);
-  color: white;
-  /* color: var(--bs-link-hover-color); */
+  background: #fe5252;
+  color: #ffffff;
 }
 
 .btn-primary:focus {
-  color: rgb(119, 119, 119);
+  color: #dddddd;
 }
 
 .btn-primary:active {
@@ -582,30 +602,56 @@ h2.animated.bounceInDown {
   outline: none;
 }
 
-.custom-dots li button {
-  font-size: 14px;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  border: none;
-  width: 30px;
-  height: 30px;
-  display: flex;
+.custom-dots {
+  bottom: 22px;
+  right: 32px;
+  left: auto;
+  width: auto;
+  display: flex !important;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
+  z-index: 6;
+}
+
+.custom-dots li {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-dots li button {
+  padding: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
-  right: 0;
 }
 
-.custom-dots li button:hover,
 .custom-dots li button:focus {
-  background: rgba(0, 0, 0, 0.8);
+  outline: none;
 }
 
-.custom-dots li.slick-active button {
-  background: rgba(255, 255, 255, 0.8);
-  color: black;
+.hero-dot {
+  display: block;
+  width: 22px;
+  height: 6px;
+  border-radius: 3px;
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.custom-dots li button:hover .hero-dot,
+.custom-dots li button:focus .hero-dot {
+  opacity: 1;
+}
+
+.custom-dots li.slick-active .hero-dot {
+  background: #ff5858;
+  border-color: #ff5858;
+  opacity: 1;
 }
 
 /* Slider height fix */

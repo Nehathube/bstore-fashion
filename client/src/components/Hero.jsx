@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [animationKey, setAnimationKey] = useState(0);
 
   const slides = [
     {
@@ -30,8 +31,11 @@ const Hero = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    beforeChange: (current, next) => setCurrentSlide(next),
-    customPaging: (i) => <button>{i + 1}</button>,
+    beforeChange: (current, next) => {
+      setCurrentSlide(next);
+      setAnimationKey((key) => key + 1);
+    },
+    customPaging: () => <span className="hero-dot" aria-hidden="true" />,
     dotsClass: "slick-dots custom-dots",
   };
 
@@ -54,12 +58,12 @@ const Hero = () => {
                 <img src={slide.image} alt="Fashion" />
               </div>
               <div className="nivo-caption">
-                <div className="d-table-cell">
-                  <h2 key={currentSlide} className="animated bounceInDown">
+                <div className="d-table-cell" key={`${animationKey}-${index}`}>
+                  <h2 className="animated bounceInDown">
                     {slide.title}
                   </h2>
-                  <p>{slide.text}</p>
-                  <button className="btn-primary">{slide.button}</button>
+                  <p className="animated bounceInUp">{slide.text}</p>
+                  <button className="btn-primary animated zoomInDown">{slide.button}</button>
                 </div>
               </div>
             </div>

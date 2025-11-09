@@ -8,15 +8,48 @@ import { products } from "../data/products";
 const Home = () => {
   const [highlightCategory, setHighlightCategory] = useState("Women");
 
-  const featuredProducts = useMemo(() => products.slice(0, 8), []);
+  const featuredProducts = useMemo(() => products.slice(0, 20), []);
 
   const highlightProducts = useMemo(
     () => [
       {
         id: "highlight-1",
-        name: "Short Sleeves T-shirt",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/product/5.webp",
-        price: 16.51,
+        name: "Printed Summer Dress",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/3.webp",
+        price: 30.5,
+        originalPrice: null,
+        category: "Women",
+        isNew: true,
+        rating: 5,
+        reviews: 1,
+      },
+      {
+        id: "highlight-2",
+        name: "Printed Chiffon Dress",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/1.webp",
+        price: 16.4,
+        originalPrice: 20.5,
+        category: "Tops",
+        isNew: true,
+        rating: 4,
+        reviews: 1,
+      },
+      {
+        id: "highlight-3",
+        name: "Printed Dress",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/9.webp",
+        price: 26.0,
+        originalPrice: null,
+        category: "T-Shirts",
+        isNew: true,
+        rating: 4,
+        reviews: 1,
+      },
+      {
+        id: "highlight-4",
+        name: "Printed Dress",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/5.webp",
+        price: 26.0,
         originalPrice: null,
         category: "Women",
         isNew: true,
@@ -24,9 +57,9 @@ const Home = () => {
         reviews: 1,
       },
       {
-        id: "highlight-2",
+        id: "highlight-5",
         name: "Skeleton Watch",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/product/1.webp",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/12.webp",
         price: 22.95,
         originalPrice: 27.0,
         category: "Tops",
@@ -35,9 +68,9 @@ const Home = () => {
         reviews: 1,
       },
       {
-        id: "highlight-3",
+        id: "highlight-6",
         name: "Leather Loafers",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/product/6.webp",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/13.webp",
         price: 23.4,
         originalPrice: 26.0,
         category: "T-Shirts",
@@ -46,9 +79,9 @@ const Home = () => {
         reviews: 1,
       },
       {
-        id: "highlight-4",
+        id: "highlight-7",
         name: "Classic Watch",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/product/12.webp",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/7.webp",
         price: 50.99,
         originalPrice: null,
         category: "Women",
@@ -57,14 +90,69 @@ const Home = () => {
         reviews: 1,
       },
       {
-        id: "highlight-5",
+        id: "highlight-8",
         name: "Designer Heels",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/product/4.webp",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/11.webp",
         price: 28.98,
         originalPrice: 30.51,
         category: "Tops",
         isSale: true,
         rating: 4,
+        reviews: 1,
+      },
+      {
+        id: "highlight-9",
+        name: "Oxford Shoes",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/10.webp",
+        price: 35.0,
+        originalPrice: null,
+        category: "T-Shirts",
+        isNew: true,
+        rating: 4,
+        reviews: 1,
+      },
+      {
+        id: "highlight-10",
+        name: "Casual T-Shirt",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/2.webp",
+        price: 19.99,
+        originalPrice: 24.99,
+        category: "T-Shirts",
+        isSale: true,
+        rating: 4,
+        reviews: 1,
+      },
+      {
+        id: "highlight-11",
+        name: "Summer Dress",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/4.webp",
+        price: 32.0,
+        originalPrice: null,
+        category: "Women",
+        isNew: true,
+        rating: 5,
+        reviews: 1,
+      },
+      {
+        id: "highlight-12",
+        name: "Striped Shirt",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/6.webp",
+        price: 25.5,
+        originalPrice: 29.99,
+        category: "Tops",
+        isSale: true,
+        rating: 4,
+        reviews: 1,
+      },
+      {
+        id: "highlight-13",
+        name: "Casual Shoes",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/sale/8.webp",
+        price: 38.0,
+        originalPrice: null,
+        category: "Women",
+        isNew: true,
+        rating: 5,
         reviews: 1,
       },
     ],
@@ -83,17 +171,19 @@ const Home = () => {
     () => [
       {
         id: "promo-men",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/product/cms13.webp",
-        title: "Fashion 2015",
-        subtitle: "For Men's",
+        image: "/images/promo/shope-add1.webp",
+        eyebrow: "Fashion 2015",
+        headline: "For Men's",
         cta: "Shop Now",
       },
       {
         id: "promo-bag",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/product/cms14.webp",
-        title: "Bags Collection 2015",
-        subtitle: "Discover the season",
+        image: "/images/promo/shope-add2.webp",
+        eyebrow: "Bags",
+        headline: "Collection 2015",
+        subline: "★★★★☆",
         cta: "Shop Now",
+        size: "small",
       },
     ],
     []
@@ -119,32 +209,46 @@ const Home = () => {
     []
   );
 
+  const halfWidthBanners = useMemo(
+    () => [
+      {
+        id: "half-1",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/one-helf1.webp",
+      },
+      {
+        id: "half-2",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/product/one-helf2.webp",
+      },
+    ],
+    []
+  );
+
   const latestNews = useMemo(
     () => [
       {
         id: "news-1",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/blog/blog1.webp",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/latest-news/1.webp",
         title: "What Is Lorem Ipsum?",
         excerpt:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       },
       {
         id: "news-2",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/blog/blog2.webp",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/latest-news/2.webp",
         title: "Share The Love For Printing",
         excerpt:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       },
       {
         id: "news-3",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/blog/blog3.webp",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/latest-news/3.webp",
         title: "Answers Your Questions",
         excerpt:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       },
       {
         id: "news-4",
-        image: "https://htmldemo.net/bstore/bstore/assets/images/blog/blog4.webp",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/latest-news/4.webp",
         title: "What Is Bootstrap?",
         excerpt:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -154,11 +258,44 @@ const Home = () => {
   );
 
   const brandLogos = useMemo(
-    () =>
-      [1, 2, 3, 4, 5, 6, 7, 8].map((index) => ({
-        id: `brand-${index}`,
-        image: `https://htmldemo.net/bstore/bstore/assets/images/brand/brand${index}.webp`,
-      })),
+    () => [
+      {
+        id: "brand-1",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/1.webp",
+      },
+      {
+        id: "brand-2",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/2.webp",
+      },
+      {
+        id: "brand-3",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/3.webp",
+      },
+      {
+        id: "brand-4",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/4.webp",
+      },
+      {
+        id: "brand-5",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/5.webp",
+      },
+      {
+        id: "brand-5b",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/5.webp",
+      },
+      {
+        id: "brand-5c",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/5.webp",
+      },
+      {
+        id: "brand-2b",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/2.webp",
+      },
+      {
+        id: "brand-3b",
+        image: "https://htmldemo.net/bstore/bstore/assets/images/brand/3.webp",
+      },
+    ],
     []
   );
 
@@ -193,10 +330,16 @@ const Home = () => {
       dots: false,
       infinite: true,
       speed: 600,
-      slidesToShow: 4,
+      slidesToShow: 5,
       slidesToScroll: 1,
       arrows: true,
       responsive: [
+        {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 4,
+          },
+        },
         {
           breakpoint: 1200,
           settings: {
@@ -252,6 +395,15 @@ const Home = () => {
     []
   );
 
+  const bestsellerProducts = useMemo(() => {
+    const extendedHighlight = highlightProducts.slice(0, 8).map((item, index) => ({
+      ...item,
+      id: `bestseller-extra-${index}-${item.id}`,
+    }));
+
+    return [...products, ...extendedHighlight];
+  }, [highlightProducts]);
+
   const bestsellerSettings = featuredSettings;
 
   const brandSettings = useMemo(
@@ -306,12 +458,21 @@ const Home = () => {
         {promoBanners.map((banner) => (
           <article
             key={banner.id}
-            className="promo-card"
+            className={`promo-card ${banner.size === "small" ? "small" : ""}`}
             style={{ backgroundImage: `url(${banner.image})` }}
           >
             <div className="promo-card-overlay">
-              <h3>{banner.title}</h3>
-              <p>{banner.subtitle}</p>
+              <div className="promo-copy">
+                {banner.eyebrow && (
+                  <span className="promo-eyebrow">{banner.eyebrow}</span>
+                )}
+                {banner.headline && (
+                  <span className="promo-headline">{banner.headline}</span>
+                )}
+                {banner.subline && (
+                  <span className="promo-subline">{banner.subline}</span>
+                )}
+              </div>
               <a href="#">{banner.cta}</a>
             </div>
           </article>
@@ -323,14 +484,33 @@ const Home = () => {
         </div>
         <Slider {...featuredSettings} className="product-slider">
           {featuredProducts.map((product) => (
-            <div key={product.id} className="carousel-card">
+            <div key={product.id} className="carousel-card featured-product-card">
               <div className="carousel-figure">
                 <img src={product.image} alt={product.name} />
                 {product.isNew && <span className="badge-tag">New</span>}
                 {product.isSale && <span className="badge-tag sale">Sale</span>}
+                <div className="overlay-content">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <i className="fa-regular fa-eye"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i className="fa-solid fa-cart-shopping"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i className="fa-regular fa-heart"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className="carousel-info">
-                <h3>{product.name}</h3>
+                <h3><a href="#">{product.name}</a></h3>
                 <div className="carousel-rating">
                   {"★".repeat(product.rating || 4)}
                   {"☆".repeat(5 - (product.rating || 4))}
@@ -352,23 +532,7 @@ const Home = () => {
         </Slider>
       </section>
       <section className="highlight-section">
-        <div className="container">
-          <div className="highlight-header">
-            <h2>Trending Collection</h2>
-            <div className="highlight-controls">
-              {['Women', 'Tops', 'T-Shirts'].map((category) => (
-                <button
-                  key={category}
-                  className={
-                    category === highlightCategory ? "active" : undefined
-                  }
-                  onClick={() => setHighlightCategory(category)}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
+        <div className="highlight-container">
           <Slider {...highlightSettings} className="highlight-slider">
             {filteredHighlightProducts.map((item) => (
               <div key={item.id} className="carousel-card dark-card">
@@ -376,9 +540,28 @@ const Home = () => {
                   <img src={item.image} alt={item.name} />
                   {item.isNew && <span className="badge-tag">New</span>}
                   {item.isSale && <span className="badge-tag sale">Sale</span>}
+                  <div className="overlay-content">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i className="fa-regular fa-eye"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fa-solid fa-cart-shopping"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i className="fa-regular fa-heart"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div className="carousel-info">
-                  <h3>{item.name}</h3>
+                  <h3><a href="#">{item.name}</a></h3>
                   <div className="carousel-rating">
                     {"★".repeat(item.rating || 4)}
                     {"☆".repeat(5 - (item.rating || 4))}
@@ -398,6 +581,19 @@ const Home = () => {
               </div>
             ))}
           </Slider>
+          <div className="highlight-controls">
+            {['Women', 'Tops', 'T-Shirts'].map((category) => (
+              <button
+                key={category}
+                className={
+                  category === highlightCategory ? "active" : undefined
+                }
+                onClick={() => setHighlightCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
       <section className="bestseller-section container">
@@ -405,15 +601,34 @@ const Home = () => {
           <h2>Bestseller</h2>
         </div>
         <Slider {...bestsellerSettings} className="product-slider">
-          {products.slice(4, 12).map((product) => (
-            <div key={product.id} className="carousel-card">
+          {bestsellerProducts.map((product) => (
+            <div key={product.id} className="carousel-card featured-product-card">
               <div className="carousel-figure">
                 <img src={product.image} alt={product.name} />
                 {product.isNew && <span className="badge-tag">New</span>}
                 {product.isSale && <span className="badge-tag sale">Sale</span>}
+                <div className="overlay-content">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <i className="fa-regular fa-eye"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i className="fa-solid fa-cart-shopping"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i className="fa-regular fa-heart"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div className="carousel-info">
-                <h3>{product.name}</h3>
+                <h3><a href="#">{product.name}</a></h3>
                 <div className="carousel-rating">
                   {"★".repeat(product.rating || 4)}
                   {"☆".repeat(5 - (product.rating || 4))}
@@ -434,11 +649,18 @@ const Home = () => {
           ))}
         </Slider>
       </section>
-      <section className="secondary-promos container">
+      <section className="half-banners container">
+        {halfWidthBanners.map((banner, index) => (
+          <a key={banner.id} href="#" className="half-banner">
+            <img src={banner.image} alt={`Bestseller banner ${index + 1}`} />
+          </a>
+        ))}
+      </section>
+      {/* <section className="secondary-promos container">
         {secondaryPromos.map((promo) => (
           <article
             key={promo.id}
-            className="promo-card small"
+            className="promo-card"
             style={{ backgroundImage: `url(${promo.image})` }}
           >
             <div className="promo-card-overlay">
@@ -448,7 +670,7 @@ const Home = () => {
             </div>
           </article>
         ))}
-      </section>
+      </section> */}
       <section className="latest-news container">
         <div className="section-heading">
           <h2>Latest News</h2>

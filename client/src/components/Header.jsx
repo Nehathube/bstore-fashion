@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import "./Header.css";
@@ -7,24 +7,6 @@ const Header = () => {
   const { getCartCount } = useCart();
   const [currencyDropdown, setCurrencyDropdown] = useState(false);
   const [languageDropdown, setLanguageDropdown] = useState(false);
-  const [categoriesDropdown, setCategoriesDropdown] = useState(false);
-  const categoriesRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        categoriesRef.current &&
-        !categoriesRef.current.contains(event.target)
-      ) {
-        setCategoriesDropdown(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <>
@@ -87,201 +69,50 @@ const Header = () => {
             </Link>
           </div>
           <div className="header-main-center">
-            <div className="search-bar" ref={categoriesRef}>
-              <div className="categories-container">
-                <button
-                  className="categories-button"
-                  onClick={() => setCategoriesDropdown(!categoriesDropdown)}
-                >
-                  CATEGORIES
-                </button>
-                {categoriesDropdown && (
-                  <div className="categories-dropdown-menu">
-                    <ul>
-                      <li onClick={() => setCategoriesDropdown(false)}>
-                        Categories
-                      </li>
-                      <li
-                        className="level-1"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        --Women
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----T-Shirts
-                      </li>
-                      <li
-                        className="level-1"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        --Men
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Shoes
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Dress
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Tops
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Casual
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Evening
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Summer
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Sports
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Day
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Evening
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Blouse
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Handba
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Phone
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----House
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Beauty
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Health
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Clothing
-                      </li>
-                      <li
-                        className="level-1"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        --Kids
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Dresse
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Casual
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Day
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Evening
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Blouse
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Handb
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----Phone
-                      </li>
-                      <li
-                        className="level-2"
-                        onClick={() => setCategoriesDropdown(false)}
-                      >
-                        ----House
-                      </li>
-                    </ul>
-                  </div>
-                )}
-              </div>
+            <form
+              className="search-bar"
+              onSubmit={(event) => event.preventDefault()}
+            >
+              <select className="categories-select" defaultValue="categories">
+                <option value="categories">CATEGORIES</option>
+                <option value="women">--Women</option>
+                <option value="t-shirts">----T-Shirts</option>
+                <option value="men">--Men</option>
+                <option value="shoes">----Shoes</option>
+                <option value="dress">----Dress</option>
+                <option value="tops">----Tops</option>
+                <option value="casual">----Casual</option>
+                <option value="evening">----Evening</option>
+                <option value="summer">----Summer</option>
+                <option value="sports">----Sports</option>
+                <option value="day">----Day</option>
+                <option value="evening-2">----Evening</option>
+                <option value="blouse">----Blouse</option>
+                <option value="handba">----Handba</option>
+                <option value="phone">----Phone</option>
+                <option value="house">----House</option>
+                <option value="beauty">----Beauty</option>
+                <option value="health">----Health</option>
+                <option value="clothing">----Clothing</option>
+                <option value="kids">--Kids</option>
+                <option value="dresse">----Dresse</option>
+                <option value="casual-2">----Casual</option>
+                <option value="day-2">----Day</option>
+                <option value="evening-3">----Evening</option>
+                <option value="blouse-2">----Blouse</option>
+                <option value="handb">----Handb</option>
+                <option value="phone-2">----Phone</option>
+                <option value="house-2">----House</option>
+              </select>
               <input
                 type="text"
                 className="search-input"
                 placeholder="Enter your search key ..."
               />
-              <button className="search-button">
-                <i className="fas fa-search"></i>
+              <button type="submit" className="search-button">
+                <i className="fa-solid fa-magnifying-glass"></i>
               </button>
-            </div>
+            </form>
           </div>
           <div className="header-main-right">
             <div className="header-right-callus">
@@ -307,9 +138,11 @@ const Header = () => {
             <Link to="/about">ABOUT US</Link>
           </div>
           <div className="cart-section">
-            <span id="nav-links">
-              <i className="fas fa-shopping-cart cart-icon"></i>
-            <Link to="/cart" className="nav-links" id="nav-links">MY CART</Link>
+            <span className="cart-link">
+              <i className="fa-solid fa-cart-shopping cart-icon"></i>
+              <Link to="/cart" className="cart-link-text">
+                MY CART
+              </Link>
             </span>
             <span className="cart-badge">2</span>
           </div>
